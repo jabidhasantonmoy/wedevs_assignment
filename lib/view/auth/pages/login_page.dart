@@ -7,6 +7,7 @@ import '../../../controller/utils/media_size.dart';
 import '../widgets/auth_input_fields.dart';
 
 class LoginPage extends StatelessWidget {
+  static const String routeName = '/loginPage';
   const LoginPage({super.key});
 
   @override

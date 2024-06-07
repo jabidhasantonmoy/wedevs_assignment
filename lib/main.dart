@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wedevs_assignment/controller/utils/media_size.dart';
 
+import 'controller/app_route/app_route.dart';
 import 'controller/app_theme/app_theme.dart';
 import 'view/auth/pages/login_page.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.lightMode,
-      home: const LoginPage(),
+      initialRoute: LoginPage.routeName,
+      onGenerateRoute: AppRoute.onGenerate,
     );
   }
 }
