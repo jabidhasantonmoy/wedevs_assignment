@@ -10,7 +10,15 @@ class AppColor {
   static const text000000 = Color(0xFF000000);
   static const textFFFFFF = Color(0xFFFFFFFF);
   static const text263238 = Color(0xFF263238);
+  static const textA4A9AF = Color(0xFFA4A9AF);
 
   // border color
   static const border263238 = Color(0xFF263238);
+
+  //icon color
+  static const icon7C8592 = Color(0xFF7C8592);
+  static const iconA4A9AFC7 = Color(0xFFA4A9AFC7);
+
+  // shadow color
+  static const shadow7C8592 = Color(0xFF395AB81A);
 }

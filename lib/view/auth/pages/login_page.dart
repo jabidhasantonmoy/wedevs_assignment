@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../controller/app_theme/text_style.dart';
 import '../../../controller/utils/media_size.dart';
+import '../widgets/auth_input_fields.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -51,13 +52,13 @@ class LoginPage extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        TextFormField(
-                          controller: _userEmailController,
-                          style: TStyle.roboto(),
-                          decoration: const InputDecoration(
-                            hintText: 'Email',
-                          ),
+                        SizedBox(height: fixedRatio(40)),
+                        authInputField(
+                          prefixIcon: Icons.email_outlined,
+                          hintText: 'Email',
                         ),
+                        SizedBox(height: fixedRatio(20)),
+                        AuthPasswordField(),
                       ],
                     ),
                   ),
