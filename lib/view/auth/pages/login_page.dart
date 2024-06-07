@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../controller/app_theme/text_style.dart';
 import '../../../controller/utils/media_size.dart';
 
 class LoginPage extends StatelessWidget {
@@ -48,6 +49,13 @@ class LoginPage extends StatelessWidget {
                           style: GoogleFonts.roboto(
                             fontSize: fixedRatio(25),
                             fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        TextFormField(
+                          controller: _userEmailController,
+                          style: TStyle.roboto(),
+                          decoration: const InputDecoration(
+                            hintText: 'Email',
                           ),
                         ),
                       ],

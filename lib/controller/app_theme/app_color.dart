@@ -9,4 +9,8 @@ class AppColor {
   // Text color
   static const text000000 = Color(0xFF000000);
   static const textFFFFFF = Color(0xFFFFFFFF);
+  static const text263238 = Color(0xFF263238);
+
+  // border color
+  static const border263238 = Color(0xFF263238);
 }

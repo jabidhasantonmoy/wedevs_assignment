@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wedevs_assignment/controller/utils/media_size.dart';
 
+import 'controller/app_theme/app_theme.dart';
 import 'view/auth/pages/login_page.dart';
 
 void main() {
@@ -16,10 +17,7 @@ class MyApp extends StatelessWidget {
     mediaWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightMode,
       home: const LoginPage(),
     );
   }
