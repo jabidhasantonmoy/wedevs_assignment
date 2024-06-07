@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedevs_assignment/controller/utils/media_size.dart';
 
 import 'view/auth/pages/login_page.dart';
 
@@ -11,6 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mediaHeight = MediaQuery.of(context).size.height;
+    mediaWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

@@ -1,39 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../controller/utils/media_size.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+    final TextEditingController _userEmailController = TextEditingController();
+    final TextEditingController _userPasswordController =
+        TextEditingController();
+    final TextEditingController _instituteNameController =
+        TextEditingController();
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+          padding: EdgeInsets.fromLTRB(
+            fixedRatio(15),
+            fixedRatio(15),
+            fixedRatio(15),
+            fixedRatio(15),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 70),
-                        Image.asset(
-                          'asset/logo/logo_1.png',
-                          height: 50,
-                          width: 165,
-                        ),
-                        const SizedBox(height: 65),
-                        Text(
-                          'Sign In',
-                          style: GoogleFonts.roboto(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w700,
+                    Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: fixedRatio(70)),
+                          Image.asset(
+                            'asset/logo/logo_1.png',
+                            height: fixedRatio(50),
+                            width: fixedRatio(165),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: fixedRatio(65)),
+                          Text(
+                            'Sign In',
+                            style: GoogleFonts.roboto(
+                              fontSize: fixedRatio(25),
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
