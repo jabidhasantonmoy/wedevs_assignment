@@ -7,10 +7,13 @@ import '../../../controller/utils/media_size.dart';
 // Figma Icons gets inappropriate after downloading.
 
 class AuthPasswordField extends StatefulWidget {
-  const AuthPasswordField({super.key});
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   State<AuthPasswordField> createState() => _AuthPasswordFieldState();
+
+  const AuthPasswordField({super.key, this.controller, this.validator});
 }
 
 class _AuthPasswordFieldState extends State<AuthPasswordField> {
@@ -94,7 +97,11 @@ class _AuthPasswordFieldState extends State<AuthPasswordField> {
   }
 }
 
-Widget authInputField({IconData? prefixIcon, String? hintText}) {
+Widget authInputField(
+    {IconData? prefixIcon,
+    String? hintText,
+    TextEditingController? controller,
+    String? Function(String?)? validator}) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(fixedRatio(10)),
@@ -108,6 +115,8 @@ Widget authInputField({IconData? prefixIcon, String? hintText}) {
       ],
     ),
     child: TextFormField(
+      controller: controller,
+      validator: validator,
       decoration: InputDecoration(
         prefixIcon: Icon(prefixIcon),
         prefixIconColor: AppColor.icon7C8592,
