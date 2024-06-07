@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../controller/app_theme/app_color.dart';
 import '../../../controller/app_theme/text_style.dart';
 import '../../../controller/utils/media_size.dart';
 import '../widgets/auth_input_fields.dart';
-import 'signup_page.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  static const String routeName = '/loginPage';
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  static const String routeName = '/signUpPage';
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+    final TextEditingController nameController = TextEditingController();
     final TextEditingController userEmailController = TextEditingController();
     final TextEditingController userPasswordController =
         TextEditingController();
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -41,19 +40,20 @@ class LoginPage extends StatelessWidget {
                       children: [
                         SizedBox(height: fixedRatio(70)),
                         Image.asset(
-                          'asset/logo/logo_1.png',
-                          height: fixedRatio(50),
-                          width: fixedRatio(165),
-                        ),
-                        SizedBox(height: fixedRatio(65)),
-                        Text(
-                          'Sign In',
-                          style: GoogleFonts.roboto(
-                            fontSize: fixedRatio(25),
-                            fontWeight: FontWeight.w700,
-                          ),
+                          'asset/others/avater_1.png',
+                          height: fixedRatio(150),
+                          width: fixedRatio(150),
                         ),
                         SizedBox(height: fixedRatio(40)),
+                        authInputField(
+                          controller: nameController,
+                          prefixIcon: Icons.man,
+                          hintText: 'Name',
+                          validator: (value) {
+                            return null;
+                          },
+                        ),
+                        SizedBox(height: fixedRatio(20)),
                         authInputField(
                           controller: userEmailController,
                           prefixIcon: Icons.email_outlined,
@@ -63,8 +63,18 @@ class LoginPage extends StatelessWidget {
                           },
                         ),
                         SizedBox(height: fixedRatio(20)),
-                        AuthPasswordField(
+                        authInputField(
                           controller: userPasswordController,
+                          prefixIcon: Icons.lock_outline_rounded,
+                          hintText: 'Password',
+                          validator: (value) {
+                            return null;
+                          },
+                        ),
+                        SizedBox(height: fixedRatio(20)),
+                        authInputField(
+                          prefixIcon: Icons.lock_outline_rounded,
+                          hintText: 'Confirm Password',
                           validator: (value) {
                             return null;
                           },
@@ -96,7 +106,7 @@ class LoginPage extends StatelessWidget {
                                       BorderRadius.circular(fixedRatio(10)),
                                 ),
                                 child: Text(
-                                  'Login',
+                                  'Sign Up',
                                   style: TStyle.roboto(
                                     whiteText: true,
                                     fontSize: fixedRatio(17),
@@ -166,14 +176,26 @@ class LoginPage extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Navigator.of(context)
-                                .pushReplacementNamed(SignUpPage.routeName);
+                                .pushReplacementNamed(LoginPage.routeName);
                           },
-                          child: Text(
-                            'Create New Account',
-                            style: TStyle.roboto(
-                              fontSize: fixedRatio(17),
-                              fontWeight: FontWeight.w300,
-                              color: AppColor.text383C40,
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Already have an account? ',
+                              style: TStyle.roboto(
+                                fontSize: fixedRatio(17),
+                                fontWeight: FontWeight.w300,
+                                color: AppColor.text383C40,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: 'Login',
+                                  style: TStyle.roboto(
+                                    fontSize: fixedRatio(17),
+                                    fontWeight: FontWeight.w700,
+                                    color: const Color(0xFF2893E3),
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                         ),
