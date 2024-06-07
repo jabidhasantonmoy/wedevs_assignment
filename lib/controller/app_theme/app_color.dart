@@ -5,4 +5,8 @@ class AppColor {
   static const cardColor = Color(0xFFFFFFFF);
 
   // button color
+
+  // Text color
+  static const text000000 = Color(0xFF000000);
+  static const textFFFFFF = Color(0xFFFFFFFF);
 }

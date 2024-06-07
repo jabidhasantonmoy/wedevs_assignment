@@ -26,34 +26,33 @@ class LoginPage extends StatelessWidget {
             fixedRatio(15),
           ),
           child: SingleChildScrollView(
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Form(
-                      key: _formKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(height: fixedRatio(70)),
-                          Image.asset(
-                            'asset/logo/logo_1.png',
-                            height: fixedRatio(50),
-                            width: fixedRatio(165),
+                Form(
+                  key: _formKey,
+                  child: SizedBox(
+                    width: fixedRatio(308),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: fixedRatio(70)),
+                        Image.asset(
+                          'asset/logo/logo_1.png',
+                          height: fixedRatio(50),
+                          width: fixedRatio(165),
+                        ),
+                        SizedBox(height: fixedRatio(65)),
+                        Text(
+                          'Sign In',
+                          style: GoogleFonts.roboto(
+                            fontSize: fixedRatio(25),
+                            fontWeight: FontWeight.w700,
                           ),
-                          SizedBox(height: fixedRatio(65)),
-                          Text(
-                            'Sign In',
-                            style: GoogleFonts.roboto(
-                              fontSize: fixedRatio(25),
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
